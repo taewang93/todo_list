@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import TodoHead from "./TodoHead";
 
 const TodoWrap = () => {
-  return <StyledTodoWrap>aa</StyledTodoWrap>;
+  return (
+    <StyledTodoWrap>
+      <TodoHead />
+    </StyledTodoWrap>
+  );
 };
 
 const StyledTodoWrap = styled.div`

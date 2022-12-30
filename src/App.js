@@ -1,6 +1,6 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
-import TodoWrap from "./component/TodoWrap";
+import TodoWrap from "./components/TodoWrap";
 
 function App() {
   return (

@@ -1,12 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import { useTodoState } from "../context/TodoContext";
 
 const TodoHead = () => {
+  const todos = useTodoState();
+  const undoneTask = todos.filter((todo) => !todo.done);
+
+  const today = new Date();
+  const dateString = today.toLocaleDateString("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  const dayName = today.toLocaleDateString("ko-KR", { weekday: "long" });
+
   return (
     <StyledTodoHead>
-      <StyledDate>2022년 12월 30일</StyledDate>
-      <StyledDay>금요일</StyledDay>
-      <StyledLeftTask>할 일 2개 남음</StyledLeftTask>
+      <StyledDate>{dateString}</StyledDate>
+      <StyledDay>{dayName}</StyledDay>
+      <StyledLeftTask>할 일 {undoneTask.length}개 남음</StyledLeftTask>
     </StyledTodoHead>
   );
 };

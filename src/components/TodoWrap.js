@@ -1,12 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { TodoProvider } from "../context/TodoContext";
+import TodoCreate from "./TodoCreate";
 import TodoHead from "./TodoHead";
+import TodoList from "./TodoList";
 
 const TodoWrap = () => {
   return (
-    <StyledTodoWrap>
-      <TodoHead />
-    </StyledTodoWrap>
+    <TodoProvider>
+      <StyledTodoWrap>
+        <TodoHead />
+        <TodoList />
+        <TodoCreate />
+      </StyledTodoWrap>
+    </TodoProvider>
   );
 };
 
